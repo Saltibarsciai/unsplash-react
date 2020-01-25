@@ -1,3 +1,33 @@
-
+.query-list button {
+  width: 100%;
+  background: DarkSalmon;
+  color: DarkRed;
+  padding: 3px;
+  margin-top: 5px;
+  text-align: center;
+  transition: 0.1s linear;
+}
+.query-list button:hover {
+  background: #ffc4ad;
+}
+.query-list .slider {
+  width: 100%;
+  background: DarkRed;
+  color: White;
+  margin-top: -5px;
+  text-align: center;
+  transition: 0.1s linear;
+  padding-top: 5px;
+}
+.query-list .slider > li {
+  list-style-type: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px;
+}
+.query-list .slider > li:hover {
+  background-color: #d95224;
+  color: White;
+}
 
 /*# sourceMappingURL=QueryList.css.map */

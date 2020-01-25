@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"QueryList.css"}
+{"version":3,"sourceRoot":"","sources":["QueryList.scss","../../global-styles/_variables.scss"],"names":[],"mappings":"AAEE;EACE;EACA,YCJM;EDKN,OCHG;EDIH;EACA;EACA;EACA;;AACA;EACE,YCNQ;;ADSZ;EACE;EACA,YCdG;EDeH,OCdI;EDeJ;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;;AACA;EACE,kBC3BI;ED4BJ,OC1BA","file":"QueryList.css"}
