@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./ImagesContainer.scss"
 import logo from "../../invega.jpg"
+import {useSelector} from "react-redux";
 
 const ImagesContainer = () => {
+    const imagesStore = useSelector(state => state.imagesReducer);
+    const renderImages = () => (
+        imagesStore.map((item, index) => (
+            <img key={index} src={item.urls.regular} alt={item.alt_description}/>
+        ))
+    );
+
     return (
         <main className="images-container">
-            <img src={logo} alt="placeholder"/>
-            <img src={logo} alt="placeholder"/>
-            <img src={logo} alt="placeholder"/>
-            <img src={logo} alt="placeholder"/>
-            <img src={logo} alt="placeholder"/>
-            <img src={logo} alt="placeholder"/>
+            {renderImages()}
         </main>
     );
 };
