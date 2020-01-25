@@ -1,7 +1,6 @@
-const imagesReducer = (state = { empty: 'no results...'}, action) => {
+const imagesReducer = (state = {}, action) => {
     switch (action.type) {
         case "addImages":
-            console.log(state);
             return {...action.newState};
         default:
             return state;
