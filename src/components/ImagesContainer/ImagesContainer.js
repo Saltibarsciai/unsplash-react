@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import "./ImagesContainer.scss"
 import {useSelector} from "react-redux";
 
