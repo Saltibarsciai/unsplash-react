@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import "./ImagesContainer.scss"
-import logo from "../../invega.jpg"
 import {useSelector} from "react-redux";
 
 const ImagesContainer = () => {
