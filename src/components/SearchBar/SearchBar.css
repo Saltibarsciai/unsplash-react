@@ -1,3 +1,52 @@
-
+.search-bar {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+.search-bar button, .search-bar input {
+  display: block;
+}
+.search-bar button:not(:first-child):not(:last-child), .search-bar input:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.search-bar button:first-child, .search-bar input:first-child {
+  border-top-left-radius: 6px;
+}
+.search-bar button:last-child, .search-bar input:last-child {
+  border-top-right-radius: 6px;
+}
+.search-bar button:not(:first-child), .search-bar input:not(:first-child) {
+  margin-left: -1px;
+}
+.search-bar:focus-within button {
+  color: White;
+  background: #d95224;
+  border-color: DarkSalmon;
+}
+.search-bar input {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: 1px solid DarkSalmon;
+  border-right: 0;
+  padding: 10px;
+  background: White;
+}
+.search-bar button {
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: DarkRed;
+  background: DarkSalmon;
+  border: 1px solid #d95224;
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.search-bar button:hover {
+  background-color: #ffc4ad;
+}
 
 /*# sourceMappingURL=SearchBar.css.map */
