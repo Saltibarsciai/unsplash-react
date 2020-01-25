@@ -10,7 +10,6 @@ class Unsplash
          return axios
             .get(this.url + query)
             .then( response => {
-                // console.log(response.data.results);
                 return response.data.results
             })
             .catch(e => {

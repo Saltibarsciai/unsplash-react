@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Unsplash from "../../utils/Unsplash";
 import "./SearchBar.scss";
-
-import {addImages, addQuery} from "../../store/actions"
+import {addImages, addQuery, startLoader, stopLoader} from "../../store/actions"
 import {useDispatch} from "react-redux";
+import uuid from "uuid/v1"
 
 const SearchBar = () => {
     const [keyword, setKeyword] = useState('');
@@ -14,9 +14,14 @@ const SearchBar = () => {
         dispatch(addQuery(keyword))
     };
     const fetchApi = () => {
+        let id = uuid();
+        dispatch(startLoader(id));
         Unsplash
             .fetch(keyword)
-            .then(results => setResults(results));
+            .then(results => {
+                setResults(results);
+                dispatch(stopLoader(id));
+            });
     };
 
     useEffect(() => {

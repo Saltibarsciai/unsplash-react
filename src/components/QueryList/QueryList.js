@@ -4,24 +4,28 @@ import 'react-slidedown/lib/slidedown.css'
 import "./QueryList.scss"
 import {useSelector, useDispatch} from "react-redux";
 import UnsplashFactory from "../../utils/Unsplash";
-import {addImages} from "../../store/actions"
+import {addImages, startLoader, stopLoader} from "../../store/actions"
 
 const QueryList = () => {
     const [isClosed, setClosed] = useState(true);
     const queryStore = useSelector(state => state.queryReducer);
     const dispatch = useDispatch();
 
-    const dispatchImages = (item) => {
+    const fetchApi = (keywords) => {
+        dispatch(startLoader('fetchApi2'));
         UnsplashFactory
-            .fetch(item)
-            .then( results => dispatch(addImages(results)));
+            .fetch(keywords)
+            .then( results => {
+                dispatch(addImages(results));
+                dispatch(stopLoader('fetchApi2'));
+            });
     };
 
     const queryList = () => {
         return (
-            queryStore.map((item, index) => (
-                <li key={index} onClick={ () => dispatchImages(item)}>
-                    {item}
+            queryStore.map((keywords, index) => (
+                <li key={index} onClick={ () => fetchApi(keywords)}>
+                    {keywords}
                 </li>
             ))
         )

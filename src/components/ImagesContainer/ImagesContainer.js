@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 
 const ImagesContainer = () => {
     const imagesStore = useSelector(state => state.imagesReducer);
+
     const renderImages = () => (
         imagesStore.map((item, index) => (
             <img key={index} src={item.urls.regular} alt={item.alt_description}/>
