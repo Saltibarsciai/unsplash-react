@@ -4,7 +4,7 @@ const NoImages = () => {
     return (
         <article style={{marginTop: '50px'}}>
             <i>
-                No images found, images are from {' '}
+                No images are found, images are from {' '}
             </i>
             <a href={"https://unsplash.com/"}>
                 Unsplash
