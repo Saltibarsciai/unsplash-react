@@ -1,4 +1,5 @@
 .query-list button {
+  border: 1px solid #d95224;
   width: 100%;
   background: DarkSalmon;
   color: DarkRed;
@@ -20,7 +21,7 @@
   padding-top: 5px;
 }
 .query-list .slider > li {
-  border-top: 1px solid DarkSalmon;
+  border-top: 1px solid #d95224;
   list-style-type: none;
   cursor: pointer;
   margin: 0;

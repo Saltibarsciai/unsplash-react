@@ -8,10 +8,11 @@ import "./SearchBar.scss";
 const SearchBar = () => {
     const [keyword, setKeyword] = useState([]);
     const [results, setResults] = useState([]);
+    const [isFirstRender, setIsFirstRender] = useState(true);
     const dispatch = useDispatch();
 
     const saveQuery = () => {
-        dispatch(addQuery(keyword))
+        dispatch(addQuery(keyword));
     };
     const fetchApi = () => {
         let id = uuid();
@@ -25,8 +26,11 @@ const SearchBar = () => {
     };
 
     useEffect(() => {
-        dispatch(replaceImages(results))
-    }, [dispatch, results]);
+        if(isFirstRender) {
+            return setIsFirstRender(false);
+        }
+        dispatch(replaceImages(results));
+    }, [results]);
 
     return (
         <section className="search-bar">
