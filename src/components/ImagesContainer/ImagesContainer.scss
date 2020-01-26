@@ -28,20 +28,26 @@
       -ms-transform: translate(-50%, -50%);
       text-align: center;
     }
-    &:hover img {
-      opacity: 0.3;
-    }
 
-    &:hover .overlay {
-      opacity: 1;
+    &:hover{
+      img{
+        opacity: 0.3;
+      }
+      .overlay{
+        opacity: 1;
+      }
     }
   }
 }
 @media only screen and (max-width: 600px) {
   .images-container{
     grid-template-columns: 1fr;
-    >a>img{
-      max-height: initial;
+    a{
+      width: 100%;
+      img{
+        max-height: initial;
+        width: 100%;
+      }
     }
   }
 

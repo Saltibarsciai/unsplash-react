@@ -40,8 +40,12 @@
   .images-container {
     grid-template-columns: 1fr;
   }
-  .images-container > a > img {
+  .images-container a {
+    width: 100%;
+  }
+  .images-container a img {
     max-height: initial;
+    width: 100%;
   }
 }
 
