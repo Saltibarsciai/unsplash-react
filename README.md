@@ -1,69 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mediapark unsplash task
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+For development, you will only need Node.js 
 
-### `yarn start`
+### Node
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    $ node --version
+    v0.10.24
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    $ npm --version
+    1.3.21 
 
-### `yarn test`
+## Install
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    $ git clone https://github.com/Saltibarsciai/unsplash-react.git
+    $ cd unsplash-react
+    $ npm install
 
-### `yarn build`
+## Start & watch
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    $ npm start
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Simple build for production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    $ npm run build
+    
+## Run tests
 
-### `yarn eject`
+    $ npm run test
+    
+## Requirements for Project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Create a web application with ReactJS, web application should:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Be one-page web application
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Have a clear, comprehensible and responsive layout
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Implement unsplash.com image retrieval API
 
-## Learn More
+User should be able to search images by entered keywords
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Image app functionality:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Web application should provide user with keyword (search) input field
 
-### Code Splitting
+When keyword is entered user should be able to press search button to retrieve the images
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+When images are returned app should parse API response and display images in the grid below the search input field
 
-### Analyzing the Bundle Size
+Application should show some sort of progress (loading) indicator while images are being fetched
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+If there are no images by entered keyword user should see message with relevant information (it could be modal popup or text element in empty image grid)
 
-### Making a Progressive Web App
+**Bonus tasks:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Allow user to query images by more than one keyword
 
-### Advanced Configuration
+Host your application in GitHub Pages
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Use SASS/SCSS to upstyle your web application
 
-### Deployment
+Write tests for chosen ReactJS component
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Allow user to save it’s query in Redux state and list saved queries, so that when pressed that query is repeated again and user gets pictures by saved query
 
-### `yarn build` fails to minify
+**Project requisites:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-"# unsplashFactory-react-frontend" 
+Project source code should be stored in GitHub, bitbucket or any other version control platform
+
+Project should have a comprehensible README file
+
+Project directory should be logically structured
+
+Source code should be clean and formatted accordingly
+
+Extensive comments in source code are not desirable, source code should be self explanatory
+
+Please follow API guidelines here
+
+**(Violated 1.4 rule  "protect access key", I didn't want to create server in order to protect access token.
+Violated 2.3 rule "Don't replicate the core user experience")**
