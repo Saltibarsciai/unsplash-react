@@ -1,6 +1,6 @@
 const queryReducer = (state = [], action) => {
     switch (action.type) {
-        case "addQuery":
+        case "ADD_QUERY":
             return [...state, action.query];
         default:
             return state;

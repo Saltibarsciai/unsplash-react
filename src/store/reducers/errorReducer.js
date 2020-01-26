@@ -1,7 +1,7 @@
 const imagesReducer = (state = [], action) => {
     switch (action.type) {
-        case "REPLACE_IMAGES":
-            return [...action.newState];
+        case "REPLACE_ERROR":
+            return [...action.error];
         default:
             return state;
     }

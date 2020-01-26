@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import {SlideDown} from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
-import "./QueryList.scss"
+import Unsplash from "../../utils/Unsplash";
+import uuid from "uuid/v1"
+import {SlideDown} from 'react-slidedown'
 import {useSelector, useDispatch} from "react-redux";
-import UnsplashFactory from "../../utils/Unsplash";
-import {addImages, startLoader, stopLoader} from "../../store/actions"
+import {replaceImages, startLoader, stopLoader} from "../../store/actions"
+import "./QueryList.scss"
 
 const QueryList = () => {
     const [isClosed, setClosed] = useState(true);
@@ -12,16 +13,17 @@ const QueryList = () => {
     const dispatch = useDispatch();
 
     const fetchApi = (keywords) => {
-        dispatch(startLoader('fetchApi2'));
-        UnsplashFactory
+        let id = uuid();
+        dispatch(startLoader(id));
+        Unsplash
             .fetch(keywords)
             .then( results => {
-                dispatch(addImages(results));
-                dispatch(stopLoader('fetchApi2'));
+                dispatch(replaceImages(results));
+                dispatch(stopLoader(id));
             });
     };
 
-    const queryList = () => {
+    const renderList = () => {
         return (
             queryStore.map((keywords, index) => (
                 <li key={index} onClick={ () => fetchApi(keywords)}>
@@ -37,7 +39,7 @@ const QueryList = () => {
                 Show saved queries
             </button>
             <SlideDown className="slider" closed={isClosed}>
-                {queryList()}
+                {renderList()}
             </SlideDown>
         </section>
     );

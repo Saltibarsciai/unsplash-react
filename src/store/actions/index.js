@@ -1,9 +1,9 @@
-import addImages from './addImages'
-import addQuery from './addQuery'
+import {replaceImages} from './images'
+import {addQuery} from './query'
 import {startLoader, stopLoader} from './loader'
 
 export {
-    addImages,
+    replaceImages,
     addQuery,
     startLoader,
     stopLoader,

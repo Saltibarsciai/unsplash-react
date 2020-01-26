@@ -2,19 +2,23 @@ import axios from "axios";
 
 class Unsplash
 {
-    url = '';
+    url = [];
     constructor(accessToken){
         this.url = "https://api.unsplash.com/search/photos/?page=1&client_id=" + accessToken + "&query=";
     }
     fetch = (query) => {
-         return axios
-            .get(this.url + query)
+        return axios
+            .get(this.url + query, {
+                headers: {
+                    "Accept-Version": "v1"
+                }
+            })
             .then( response => {
                 return response.data.results
             })
             .catch(e => {
                 console.log(e);
-                return e;
+                return e
             })
     }
 }

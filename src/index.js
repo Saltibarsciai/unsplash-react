@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './global-styles/index.scss';
 import App from './containers/App/App';
-import {createStore, applyMiddleware} from "redux";
-import { loadingBarMiddleware } from 'react-redux-loading-bar'
+import {createStore} from "redux";
 import allReducers from './store/reducers'
 import {Provider} from 'react-redux'
+import './global-styles/index.scss';
 
 const store = createStore(
-    allReducers,
-    applyMiddleware(loadingBarMiddleware())
+    allReducers
 );
 
 ReactDOM.render(

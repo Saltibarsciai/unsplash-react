@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Unsplash from "../../utils/Unsplash";
-import "./SearchBar.scss";
-import {addImages, addQuery, startLoader, stopLoader} from "../../store/actions"
-import {useDispatch} from "react-redux";
 import uuid from "uuid/v1"
+import {addQuery, replaceImages, startLoader, stopLoader} from "../../store/actions"
+import {useDispatch} from "react-redux";
+import "./SearchBar.scss";
 
 const SearchBar = () => {
-    const [keyword, setKeyword] = useState('');
+    const [keyword, setKeyword] = useState([]);
     const [results, setResults] = useState([]);
     const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const SearchBar = () => {
     };
 
     useEffect(() => {
-        dispatch(addImages(results))
+        dispatch(replaceImages(results))
     }, [dispatch, results]);
 
     return (
